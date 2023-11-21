@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block titulo %} Bienvenido a la biblioteca {% endblock %}
+
+{% block contenido %} 
+<div class="p-5 bg-light">
+    <div class="container">
+        <h1 class="display-3">Bienvenido</h1>
+        <hr class="my-2">
+    </div>
+    <div class="container mt-4">
+        <h2>Información de la Biblioteca</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Nombre:</strong>Biblioteca Regional de Atacama</li>
+            <li class="list-group-item"><strong>Teléfono:</strong> (52) 253 2804</li>
+            <li class="list-group-item"><strong>Correo:</strong> copiapobibliotecaregional@gmail.com</li>
+            <li class="list-group-item"><strong>Ubicación:</strong> Colipi 565, 1530000 Copiapó, Atacama</li>
+            <li class="list-group-item"><strong>Horario de Atención:</strong>  
+                Domingo	Cerrado,
+                Lunes	9 a.m Hasta las 5:30p.m,
+                Martes	9 a.m. Hasta las 8 p.m,
+                Miércoles  9 a.m Hasta las 5:30 p.m,
+                Jueves	9 a.m Hasta las 8 p.m,
+                Viernes	9 a.mHasta las 5:30 p.m, 
+                Sábado	Cerrado</li>
+                {% if biblioteca.redes_sociales %}
+                <li class="list-group-item">
+                    <strong>Redes Sociales:</strong>
+                    <a href="{{ biblioteca.redes_sociales }}" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                
+            {% endif %}
+        </ul>
+        <p class="lead">Ingresa a nuestra biblioteca y descubre un mundo de conocimiento.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'libros' %}" role="button">Realizar Búsqueda</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
