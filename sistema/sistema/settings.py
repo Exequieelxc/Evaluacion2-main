@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 SECRET_KEY = 'django-insecure-861enl+v7*_hm3)j%5%u74t#$f1adhiy5_z7^am)op^ty334&l'
@@ -48,7 +48,7 @@ ROOT_URLCONF = 'sistema.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'sistema', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
